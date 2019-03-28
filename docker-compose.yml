@@ -1,0 +1,9 @@
+version: '2'
+services:
+  web:
+    build: ./bootstrap.sh
+    command: Toolchains/swift-4.1.2-RELEASE.xctoolchain/usr/bin/swift run -c release --static-swift-stdlib --build-path .build/swift-4.1.2-RELEASE
+    volumes:
+      - .:/swiftplayground
+    ports:
+      - "8080:8080"
